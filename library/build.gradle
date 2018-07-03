@@ -1,0 +1,23 @@
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+	clover 'org.openclover:clover:4.2.0'
+}
+
+clover {
+	report {
+		html=true
+	}
+}
+
+install {
+    repositories.mavenInstaller {
+        pom.version = version
+        pom.groupId = 'org.example'
+        pom.artifactId = 'library'
+    }
+}
+

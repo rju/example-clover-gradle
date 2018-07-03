@@ -1,0 +1,20 @@
+apply plugin: 'application'
+apply plugin: 'java'
+
+mainClassName='org.iobserve.collector.CollectorMain'
+
+dependencies {
+	clover 'org.openclover:clover:4.2.0'
+	
+	compile project(":library")
+}
+
+install {
+    repositories.mavenInstaller {
+        pom.version = version
+        pom.groupId = 'org.example'
+        pom.artifactId = 'tool'
+    }
+}
+
+
