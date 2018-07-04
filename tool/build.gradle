@@ -9,6 +9,10 @@ dependencies {
 	compile project(":library")
 }
 
+test {
+  scanForTestClasses=false
+}
+
 install {
     repositories.mavenInstaller {
         pom.version = version
